@@ -25,7 +25,7 @@ import rpio_client.Net_RPI_IO;
  */
 public class RPI_Email {
     
-     private static final int INTRUSION = 30001;
+    private static final int INTRUSION = 30001;
     private static final int ENERGY = 30002;
     private static final int LIGHTS = 30003;
     private static final int AC = 30004;
@@ -169,6 +169,11 @@ public class RPI_Email {
             case "get temp":
                 request=request+"Radar Room Temp: "+sendCommand("localhost",AC,"get temperature");
                 break;
+                
+            case "get email log":
+                request="/home/pi/NetBeansProjects/RPI_Get_Email_Status/email_Log.txt";
+                break;
+                
             case "get temp log":
                 request=sendCommand("localhost",AC,"get temp log,"+parts[1]);
                 break;
